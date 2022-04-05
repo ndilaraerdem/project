@@ -4,8 +4,8 @@
     </div>
     <div class="flex-auto w-48">
         <div class="m-6">
-            <p>Sing In with your..</p>
-            <h1 class="text-2xl">ADMIN LOGIN</h1>
+            <h1 class="text-2xl text-center font-extrabold bg-orange-500 text-slate-800">A D M I N &nbsp;&nbsp; L O G I
+                N</h1>
             <form [formGroup]="userForm" (ngSubmit)="fncLogin()" method="post">
 
                 <div class="mt-3">
@@ -24,7 +24,7 @@
                 </div>
 
                 <button *ngIf="email?.valid && password?.valid"
-                    class="mt-3 px-4 py-3 rounded-full bg-sky-500 text-white" type="submit">Send</button>
+                    class="mt-3 px-4 py-3 rounded-full bg-sky-500 text-white" type="submit">LOGIN</button>
 
             </form>
         </div>
