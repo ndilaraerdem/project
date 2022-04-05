@@ -1,0 +1,11 @@
+<div class="flex flex-row justify-between">
+    <div>
+        <img class=" h-16 sm:p-2" src="../../assets/etiya_logo.png" alt="Etiya Logo">
+    </div>
+    <div class="h-16 p-4">
+        <fa-icon class="text-xl" [icon]="faUser"></fa-icon>  | 
+        {{user.userName}} {{user.userSurname}}  | 
+        <button (click)="logout()"><fa-icon class="text-xl" [icon]="faArrowRightFromBracket"></fa-icon></button>
+        <!--<a class= "cursor-pointer" (click)="logout()"><fa-icon class="text-xl" [icon]="faArrowRightFromBracket"></fa-icon></a>-->
+    </div>
+
