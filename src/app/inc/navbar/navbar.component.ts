@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { faArrowRightFromBracket, faUser } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
+import { faArrowRightFromBracket, faBriefcase, faGripLines, faHandPointRight, faRightFromBracket, faUser, faUsers } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -8,9 +9,23 @@ import { faArrowRightFromBracket, faUser } from '@fortawesome/free-solid-svg-ico
 export class NavbarComponent implements OnInit {
   faUser = faUser;
   faArrowRightFromBracket = faArrowRightFromBracket;
+  faUsers = faUsers;
+  faBriefcase = faBriefcase;
+  faGripLines = faGripLines;
+  faHandPointRight = faHandPointRight;
+  faRightFromBracket = faRightFromBracket;
 
-  constructor() { }
+  constructor(
+    private router : Router
+  ) { }
+  logout() {
+    const alert = confirm('Silmek istediğinizden emin misiniz?')
+      if (alert) {
+        sessionStorage.removeItem('user')
+        this.router.navigate(['/'])
+      }
 
+    }
   ngOnInit(): void {
   }
 

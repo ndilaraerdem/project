@@ -1,11 +1,30 @@
-<a [routerLink]="['/admin']" routerLinkActive="">
-    <div class=" bg-zinc-200 p-10 text-center hover:bg-sky-200">
-        <fa-icon class="text-xl" [icon]="faUser"></fa-icon>
-        <div>B2C</div>
-        <div>B2B</div>
-        <div>ICON</div>
-        <div>ICON</div>
-        <div>ICON</div>
-        <div></div>
-    </div>
-</a>
+<div class=" bg-zinc-200 text-center ">
+    <a [routerLink]="['/admin']" routerLinkActive="">
+        <div class="hover:bg-sky-200 p-10">
+            <fa-icon class="text-xl" [icon]="faUsers"></fa-icon>
+            B2B
+        </div>
+    </a>
+    <hr>
+    <a [routerLink]="['']">
+        <div class="hover:bg-sky-200 p-10">
+            <fa-icon class="text-xl" [icon]="faBriefcase"></fa-icon><br>
+            B2B
+        </div>
+    </a>
+    <a [routerLink]="['']">
+        <div class="hover:bg-sky-200 p-10">
+            <fa-icon class="text-xl" [icon]="faGripLines"></fa-icon><br>
+        </div>
+    </a>
+    <a [routerLink]="['']">
+        <div class="hover:bg-sky-200 p-10">
+            <fa-icon class="text-xl" [icon]="faHandPointRight"></fa-icon><br>
+        </div>
+    </a>
+    <a (click)="logout()" [routerLink]="['/']">
+        <div class="hover:bg-sky-200 p-10">
+            <fa-icon class="text-xl" [icon]="faRightFromBracket"></fa-icon><br>
+        </div>
+    </a>
+</div>
