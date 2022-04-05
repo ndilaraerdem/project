@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { faArrowRightFromBracket, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightFromBracket, faPowerOff, faUser } from '@fortawesome/free-solid-svg-icons';
 import { Bilgiler, User } from 'src/app/models/IUser';
 
 @Component({
@@ -10,8 +10,7 @@ import { Bilgiler, User } from 'src/app/models/IUser';
 })
 export class HeaderComponent implements OnInit {
   faUser = faUser;
-  faArrowRightFromBracket = faArrowRightFromBracket;
-
+  faPowerOff =faPowerOff;
   user: Bilgiler = {
     userId: '',
     userName: '',
