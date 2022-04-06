@@ -38,16 +38,6 @@ export class HeaderComponent implements OnInit {
       this.router.navigate(['/'])
     }
   }
-
-  logout() {
-    const alert = confirm('Silmek istediğinizden emin misiniz?')
-      if (alert) {
-        sessionStorage.removeItem('user')
-        this.router.navigate(['/'])
-      }
-
-    }
-
   ngOnInit(): void {
   }
 

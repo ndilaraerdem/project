@@ -1,6 +1,68 @@
-
 <app-header></app-header>
 <div class="flex flex-row m-5">
-    <div class="basis-1/12"><app-navbar></app-navbar></div>
-    <div class="basis-11/12">Content</div>
+    <div class="basis-1/12">
+        <app-navbar></app-navbar>
+    </div>
+    <div class="basis-11/12 ml-20">
+        <div>
+            <div class="mb-1 text-neutral-400"> Product Search </div>
+
+            <input class="" [(ngModel)]="search" (keyup)="fncSearch()" class="form-input rounded-full w-full" placeholder="Search Id, Product Name, Price">
+        </div>
+        <hr class="mt-3">
+        <div class="flex flex-col">
+            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                <div class="overflow-hidden">
+                  <table class="min-w-full">
+                    <thead class="border-b">
+                      <tr>
+                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                            #
+                          </th>
+                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                          ID
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                          Title
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                          Price
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                          Image
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="border-b" *ngFor="let item of arr; let i = index">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{i+1}}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"> <a (click)="fncDetail(i); ngxSmartModalService.getModal('myModal').open()" class="cursor-pointer">{{item.productId}}</a> </td>
+                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                          {{item.productName}}
+                        </td>
+                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                          {{item.price}}₺
+                        </td>
+                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                          <img src="{{item.images![0].normal!}}" class="w-10">
+                        </td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--NGX SMART MODEL BEGIN-->
+          <ngx-smart-modal #myModal identifier="myModal">
+            <h1 class="text-2xl text-center" >{{ product?.productName }}</h1>
+            <img src='{{product.images && product.images[0].normal }}' class="w-full" />
+            <p class="mt-2">{{ product?.brief }}</p>
+            <p class="mt-4">{{ product?.description }}</p>
+            <div class="text-right text-2xl text-orange-600" > {{ product?.price }} </div>
+          </ngx-smart-modal>
+          <!--NGX SMART MODEL END-->
+    </div>
 </div>

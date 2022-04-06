@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { faArrowRightFromBracket, faBriefcase, faGripLines, faHandPointRight, faPowerOff, faRightFromBracket, faUser, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightFromBracket, faBars, faBriefcase, faGripLines, faHandPointRight, faPowerOff, faRightFromBracket, faUser, faUsers } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
   faPowerOff = faPowerOff;
   faUsers = faUsers;
   faBriefcase = faBriefcase;
-  faGripLines = faGripLines;
+  faBars = faBars;
   faHandPointRight = faHandPointRight;
   faRightFromBracket = faRightFromBracket;
 
