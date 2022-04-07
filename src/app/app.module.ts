@@ -13,6 +13,8 @@ import { AdminComponent } from './admin/admin.component';
 import { HeaderComponent } from './inc/header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavbarComponent } from './inc/navbar/navbar.component';
+import { ProfileComponent } from './profile/profile.component';
+import { AddressComponent } from './address/address.component';
 
 
 @NgModule({
@@ -22,6 +24,8 @@ import { NavbarComponent } from './inc/navbar/navbar.component';
     AdminComponent,
     HeaderComponent,
     NavbarComponent,
+    ProfileComponent,
+    AddressComponent,
    
   ],
   imports: [

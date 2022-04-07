@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div class="flex flex-row m-5">
+    <div class="basis-1/12 "> <app-navbar></app-navbar> </div>
+    <div class="basis-11/12 ml-10">
+        <h1 class="text-2xl">Profile</h1>
+        <div class="mt-3">
+            <div class="mb-1 text-neutral-400">Name*</div>
+            <input [(ngModel)]="user.userName" type="text" class="form-input rounded-full w-full" placeholder="User Name" />
+        </div>
+        <div class="mt-3">
+            <div class="mb-1 text-neutral-400">Surname*</div>
+            <input [(ngModel)]="user.userSurname" type="text" class="form-input rounded-full w-full" placeholder="User Surname" />
+        </div>
+        <div class="mt-3">
+            <div class="mb-1 text-neutral-400">Email*</div>
+            <input [(ngModel)]="user.userEmail" type="text" class="form-input rounded-full w-full" placeholder="E-Mail" />
+        </div>
+        <div class="mt-3">
+            <div class="mb-1 text-neutral-400">Phone*</div>
+            <input [(ngModel)]="user.userPhone" type="text" class="form-input rounded-full w-full" placeholder="Phone" />
+        </div>
+        <div class="mt-3">
+            <div class="mb-1 text-neutral-400">Password*</div>
+            <input [(ngModel)]="password" type="password" class="form-input rounded-full w-full" placeholder="Password" />
+        </div>
+        
+        <button (click)="updateData()" class="mt-3 px-4 py-3 rounded-full bg-orange-300 text-white" type="submit">Send</button>
+    </div>
+</div>

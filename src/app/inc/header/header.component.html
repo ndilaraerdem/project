@@ -3,7 +3,7 @@
         <img class=" h-16 sm:p-2" src="../../assets/etiya_logo.png" alt="Etiya Logo">
     </div>
     <div class="h-16 p-4">
-        <fa-icon class="text-xl" [icon]="faUser"></fa-icon>  | 
+       <a [routerLink]="['/profile']" routerLinkActive="router-link-active"  class=" cursor-pointer"><fa-icon class="text-xl" [icon]="faUser"></fa-icon></a>   | 
         {{user.userName}} {{user.userSurname}} 
         
         <!--<a class= "cursor-pointer" (click)="logout()"><fa-icon class="text-xl" [icon]="faArrowRightFromBracket"></fa-icon></a>-->
