@@ -42,7 +42,7 @@
                           {{item.productName}}
                         </td>
                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                          {{item.price}}₺
+                          {{item.price! | tlPipe }}
                         </td>
                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                           <img src="{{item.images![0].normal!}}" class="w-10">
@@ -62,6 +62,7 @@
             <p class="mt-2">{{ product?.brief }}</p>
             <p class="mt-4">{{ product?.description }}</p>
             <div class="text-right text-2xl text-orange-600" > {{ product?.price }} </div>
+            <button (click)="addToCart(product.productId!)" class="p-2 rounded hover:bg-orange-600 text-white bg-orange-700">Add to Cart</button>
           </ngx-smart-modal>
           <!--NGX SMART MODEL END-->
     </div>

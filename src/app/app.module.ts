@@ -15,6 +15,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavbarComponent } from './inc/navbar/navbar.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AddressComponent } from './address/address.component';
+import { TlPipePipe } from './pipes/tl-pipe.pipe';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { AddressComponent } from './address/address.component';
     NavbarComponent,
     ProfileComponent,
     AddressComponent,
+    TlPipePipe,
+    CartComponent,
    
   ],
   imports: [

@@ -11,5 +11,5 @@ export interface AddressList {
     adres?:        string;
     kapiNo?:       string;
     not?:          string;
-    tarih?:        Date;
+    tarih?:        Date | string;
 }

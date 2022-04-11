@@ -22,7 +22,9 @@
                     <div class="text-red-600" *ngIf="password?.invalid && password?.touched"> Password Entry! </div>
 
                 </div>
-
+                <div class="mt-3">
+                    <input type="checkbox" formControlName="remember" id="remember" name="remember">  <label for="remember">Remember</label> 
+                </div>
                 <button *ngIf="email?.valid && password?.valid"
                     class="mt-3 px-4 py-3 rounded-full bg-orange-400 text-white" type="submit">LOGIN</button>
 

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Bilgiler, IUser } from '../models/IUser';
+import { decrypt, encrypt } from '../utils';
 
 @Component({
   selector: 'app-profile',
@@ -29,7 +30,7 @@ export class ProfileComponent implements OnInit {
     const stringUserItem = sessionStorage.getItem('user')
     if (stringUserItem) {
       try {
-        this.user = JSON.parse(stringUserItem)
+        this.user = JSON.parse(decrypt(stringUserItem))
       } catch (error) {
         sessionStorage.removeItem('user')
       }
@@ -73,7 +74,7 @@ export class ProfileComponent implements OnInit {
           const message = userData.mesaj
           if (status) {
             const stringUser = JSON.stringify(mythis.user)
-            sessionStorage.setItem('user',stringUser)
+            sessionStorage.setItem('user', stringUser)
             mythis.toast.success(message)
             setTimeout(()=>{
               window.location.reload()

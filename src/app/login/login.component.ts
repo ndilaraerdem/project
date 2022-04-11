@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { IUser } from '../models/IUser';
 import {  ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { encrypt, rememberControl } from '../utils';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,10 +17,20 @@ export class LoginComponent implements OnInit {
     private http: HttpClient,
     private toast : ToastrService,
     private router : Router
-  ) { }
+  ) { 
+    //kullanıcı beni hatırla dediyse
+    //kullanıcıyı admine gönder
+
+    const status = rememberControl();
+    if (status === true) {
+      this.router.navigate(['/admin'])
+    }
+
+  }
   userForm = this.formBuilder.group({
     email : '',
-    password : ''
+    password : '',
+    remember: false
   })
 
   ngOnInit(): void {
@@ -29,7 +40,8 @@ export class LoginComponent implements OnInit {
       ]),
       password : new FormControl(this.userForm.value.password, [
         Validators.required
-      ])
+      ]),
+      remember: new FormControl(this.userForm.value.remember, [])
     })
   }
   get email() {
@@ -41,6 +53,8 @@ export class LoginComponent implements OnInit {
   fncLogin(){
     const email = this.email?.value
     const password = this.password?.value
+    const remember = this.userForm.value.remember
+    console.log("remember",remember);
     
     const url = 'https://www.jsonbulut.com/json/userLogin.php'
     const sendParams = {
@@ -61,12 +75,17 @@ export class LoginComponent implements OnInit {
           //giriş başarılı
           mythis.toast.success(
             message, 'User Login'
+
           )
           //Session Storage'a kullanıcı bilgilerini sakla
           const userData = user.bilgiler;
            if(userData){
              const stringUserData = JSON.stringify(userData);
-             sessionStorage.setItem('user',stringUserData)
+             sessionStorage.setItem('user', encrypt(stringUserData))
+            //remember ->true
+             if(remember === true){
+              localStorage.setItem('user', encrypt(stringUserData))
+            }
              mythis.router.navigate(['/admin'])
            }
         }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faArrowRightFromBracket, faPowerOff, faUser } from '@fortawesome/free-solid-svg-icons';
 import { Bilgiler, User } from 'src/app/models/IUser';
+import { decrypt, rememberControl } from 'src/app/utils';
 
 @Component({
   selector: 'app-header',
@@ -21,12 +22,13 @@ export class HeaderComponent implements OnInit {
     faceID: ''
   }
   constructor(private router: Router) {
+    rememberControl();
     const stringUserItem = sessionStorage.getItem('user')
     if (stringUserItem) {
       //giriş var
       try {
         //hata olma olasılığı olan kodlar
-        this.user = JSON.parse(stringUserItem)
+        this.user = JSON.parse(decrypt(stringUserItem))
       } catch (error) {
         //hata olduğunda çalışacak kodlar
         sessionStorage.removeItem('user')

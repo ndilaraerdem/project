@@ -22,7 +22,8 @@ export class NavbarComponent implements OnInit {
   logout() {
     const alert = confirm('Silmek istediğinizden emin misiniz?')
       if (alert) {
-        sessionStorage.removeItem('user')
+        localStorage.removeItem('user')//beni hatırlayı sil
+        sessionStorage.removeItem('user')//user oturumunu sil
         this.router.navigate(['/'])
       }
 
