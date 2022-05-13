@@ -1,50 +1,49 @@
 <app-header></app-header>
-<div class="flex flex-row">
-    <div class="basis-1/12 ">
+<div class="flex flex-row  m-5">
+    <div class="basis-1/12">
         <app-navbar></app-navbar>
     </div>
-    <div class="basis-11/12 ml-10">
-        <h1 class="text-2xl">Adress</h1>
-        <hr>
-        <div class="flex flex-row mt-2">
-            <div>
+    <div class="basis-11/12 ml-20">
+        <h1 [appTitleH1]="'Address'"></h1>
+        
+        <div class="flex flex-row space-x-4">
+            <div class="mt-3 w-full">
                 <div class="mb-1 text-neutral-400">City*</div>
                 <input [(ngModel)]="address.il" type="text" class="form-input rounded-full w-full" placeholder="City" />
             </div>
-            &nbsp;
-            <div>
+
+            <div class="mt-3 w-full">
                 <div class="mb-1 text-neutral-400">District*</div>
-                <input [(ngModel)]="address.ilce" type="text" class="form-input rounded-full w-full"
-                    placeholder="District" />
+                <input [(ngModel)]="address.ilce"  type="text" class="form-input rounded-full w-full" placeholder="District" />
             </div>
-            &nbsp;
-            <div>
+            <div class="mt-3 w-full">
                 <div class="mb-1 text-neutral-400">Neighborhood*</div>
-                <input [(ngModel)]="address.Mahalle" type="text" class="form-input rounded-full w-full"
-                    placeholder="Neighborhood" />
+                <input [(ngModel)]="address.Mahalle" type="text" class="form-input rounded-full w-full" placeholder="Neighborhood" />
             </div>
-            &nbsp;
-            <div>
-                <div class="mb-1 text-neutral-400">Address*</div>
-                <input [(ngModel)]="address.adres" type="text" class="form-input rounded-full w-full"
-                    placeholder="Address" />
-            </div>
-            &nbsp;
-            <div>
-                <div class="mb-1 text-neutral-400">No*</div>
-                <input [(ngModel)]="address.kapiNo" type="text" class="form-input rounded-full w-full"
-                    placeholder="No" />
-            </div>
-            &nbsp;
-            <div>
-                <div class="mb-1 text-neutral-400">Note*</div>
-                <input [(ngModel)]="address.not" type="text" class="form-input rounded-full w-full"
-                    placeholder="Note" />
-            </div>
-            &nbsp;
-            <button (click)="addAddress()" class="mt-3 px-4 py-3 rounded-full bg-orange-300 text-white"
-                type="submit">Save</button>
+
         </div>
+
+        <div class="flex flex-row space-x-4">
+            
+            <div class="mt-3 w-full">
+                <div class="mb-1 text-neutral-400">Address*</div>
+                <input [(ngModel)]="address.adres"  type="text" class="form-input rounded-full w-full" placeholder="Address" />
+            </div>
+            <div class="mt-3 w-full">
+                <div class="mb-1 text-neutral-400">No*</div>
+                <input [(ngModel)]="address.kapiNo" type="text" class="form-input rounded-full w-full" placeholder="No" />
+            </div>
+
+            <div class="mt-3 w-full">
+                <div class="mb-1 text-neutral-400">Note*</div>
+                <input [(ngModel)]="address.not"  type="text" class="form-input rounded-full w-full" placeholder="Note" />
+            </div>
+
+        </div>
+  
+
+        <button (click)="addAddress()" class="mt-3 px-4 py-3 rounded-xl bg-orange-500 hover:bg-orange-400 text-white" type="submit">Save</button>
+
 
         <div class="mt-10">
             <hr>

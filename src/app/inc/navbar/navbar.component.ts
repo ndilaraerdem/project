@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit {
     private router : Router
   ) { }
   logout() {
-    const alert = confirm('Silmek istediğinizden emin misiniz?')
+    const alert = confirm('Çıkmak istediğinizden emin misiniz?')
       if (alert) {
         localStorage.removeItem('user')//beni hatırlayı sil
         sessionStorage.removeItem('user')//user oturumunu sil

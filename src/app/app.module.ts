@@ -17,6 +17,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { AddressComponent } from './address/address.component';
 import { TlPipePipe } from './pipes/tl-pipe.pipe';
 import { CartComponent } from './cart/cart.component';
+import { TitleH1Directive } from './directives/title-h1.directive';
+import { UsersModule } from './users/users.module';
+import { CustomerComponent } from './customer/customer.component';
 
 
 @NgModule({
@@ -30,6 +33,8 @@ import { CartComponent } from './cart/cart.component';
     AddressComponent,
     TlPipePipe,
     CartComponent,
+    TitleH1Directive,
+    CustomerComponent,
    
   ],
   imports: [
@@ -41,7 +46,8 @@ import { CartComponent } from './cart/cart.component';
     ToastrModule.forRoot(),
     FontAwesomeModule,
     FormsModule,
-    NgxSmartModalModule.forRoot()
+    NgxSmartModalModule.forRoot(),
+    UsersModule
    
   ],
   providers: [],
